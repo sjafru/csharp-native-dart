@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Z.Expressions;
 
@@ -13,9 +14,7 @@ namespace NativeLibrary
         [UnmanagedCallersOnly(EntryPoint = "aotsample_add")]
         public static int Add(int a, int b)
         {
-            var x = "1+2".Execute<int>(); 
-
-            return a + b + x;
+            return "a + b".Execute<int>(new {a, b});
         }
 
         [UnmanagedCallersOnly(EntryPoint = "aotsample_write_line")]
