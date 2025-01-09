@@ -8,4 +8,8 @@
     <PublishAot>true</PublishAot>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Z.Expressions.Eval" Version="6.2.4" />
+  </ItemGroup>
+
 </Project>

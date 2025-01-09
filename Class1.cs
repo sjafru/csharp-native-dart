@@ -3,6 +3,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using Z.Expressions;
 
 namespace NativeLibrary
 {
@@ -12,7 +13,9 @@ namespace NativeLibrary
         [UnmanagedCallersOnly(EntryPoint = "aotsample_add")]
         public static int Add(int a, int b)
         {
-            return a + b;
+            var x = "1+2".Execute<int>(); 
+
+            return a + b + x;
         }
 
         [UnmanagedCallersOnly(EntryPoint = "aotsample_write_line")]
